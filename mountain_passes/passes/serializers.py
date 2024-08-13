@@ -7,7 +7,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class PassSerializer(serializers.ModelSerializer):
-    user = UserSerializer()
+    user = UserSerializer(read_only=True)
 
     class Meta:
         model = Pass
@@ -15,6 +15,11 @@ class PassSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         user_data = validated_data.pop('user')
-        user = User.objects.create(**user_data)
+        user, created = User.objects.get_or_create(**user_data)
         validated_data['user'] = user
         return super().create(validated_data)
+
+    def update(self, instance, validated_data):
+        # Отключаем обновление пользователя в PATCH-запросе
+        validated_data.pop('user', None)
+        return super().update(instance, validated_data)
