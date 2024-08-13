@@ -76,11 +76,21 @@ WSGI_APPLICATION = 'mountain_passes.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'default': {  # PostgreSQL - база данных по умолчанию
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mountain',
+        'USER': 'myuser',
+        'PASSWORD': 'leto',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    },
+    'sqlite': {  # SQLite остается доступной как дополнительная база данных
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
 
 
 # Password validation
