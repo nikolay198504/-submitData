@@ -3,38 +3,29 @@
 
 Проект Mountain Passes предоставляет API для работы с информацией о горных перевалах. Это API включает возможности добавления, редактирования, удаления и просмотра информации о различных перевалах.
 
-## Установка и настройка
-
-### Требования
-
-- Python 3.11
-- Django 5.0.7
-- PostgreSQL
-
-### Установка
 
 1. **Клонируйте репозиторий:**
 
-    ```bash
-    git clone <URL вашего репозитория>
+    ```
+    git clone <https://github.com/nikolay198504/-submitData/tree/d7bbeb0f9ddcc515a1a3a149793943894c3b356f/mountain_passes>
     cd mountain_passes
     ```
 
 2. **Создайте виртуальное окружение:**
 
-    ```cmd
+    ```
     python -m venv .venv
     ```
 
 3. **Активируйте виртуальное окружение:**
 
-    ```cmd
+    ```
     .venv\Scripts\activate
     ```
 
 4. **Установите зависимости:**
 
-    ```cmd
+    ```
     pip install -r requirements.txt
     ```
 
@@ -42,19 +33,19 @@
 
     Создайте базу данных PostgreSQL и примените миграции:
 
-    ```cmd
+    ```
     python manage.py migrate
     ```
 
 6. **Создайте суперпользователя:**
 
-    ```cmd
+    ```
     python manage.py createsuperuser
     ```
 
 7. **Запустите сервер разработки:**
 
-    ```cmd
+    ```
     python manage.py runserver
     ```
 
@@ -74,7 +65,7 @@
 
 Для запуска тестов используйте команду:
 
-```cmd
+```
 python manage.py test
 ```
 
